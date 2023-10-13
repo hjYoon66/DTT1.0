@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import NavBar3 from "./Nav/NavBar3";
 const Join = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -45,8 +46,9 @@ const Join = () => {
 
   return (
     <>
-      <div className="parent-container" id="Join">
-        <div className="form-container">
+      <NavBar3 />
+      <div className="parent-containerJ" id="Join">
+        <div className="form-containerJ">
           <h2>DTT 회원가입</h2>
           <form onSubmit={handleSubmit}>
             <input

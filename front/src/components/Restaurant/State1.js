@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import tableState1_1 from "../assets/img/Signs/available1.glb";
-import tableState1_2 from "../assets/img/Signs/inuse1.glb";
-import tableState1_3 from "../assets/img/Signs/occupied1.glb";
-import tableState1_4 from "../assets/img/Signs/reserved1.glb";
-import human1 from "../assets/img/Human/Human1-1.glb";
-import human3 from "../assets/img/Human/Human1-3.glb";
+import tableState1_1 from "../../assets/img/Signs/available1.glb";
+import tableState1_2 from "../../assets/img/Signs/inuse1.glb";
+import tableState1_3 from "../../assets/img/Signs/occupied1.glb";
+import tableState1_4 from "../../assets/img/Signs/reserved1.glb";
+import human1 from "../../assets/img/Human/Human1-1.glb";
+import human3 from "../../assets/img/Human/Human1-3.glb";
 
 export const State1 = (props) => {
   const [reservations1, setReservations1] = useState([]);

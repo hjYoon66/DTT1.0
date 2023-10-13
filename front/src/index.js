@@ -2,15 +2,15 @@ import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
-import NavBar from "./components/NavBar";
-import Banner from "./components/Banner";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Restaurant1 from "./components/Restaurant1";
-import SimpleInfo from "./components/SimpleInfo";
-import MypageInfo from "./components/MypageInfo";
+import NavBar from "./components/Nav/NavBar";
+import Restaurant1 from "./components/Restaurant/Restaurant1";
+import SimpleInfo from "./components/Restaurant/SimpleInfo";
+import MypageInfo from "./components/Mypage/MypageInfo";
+import MyPageReservation from "./components/Mypage/MypageReservation";
 import Join from "./components/Join";
+import MyPage from "./components/Mypage/MyPage";
+import Reservation12 from "./components/Reservation/Reservation12";
+import Reservation11 from "./components/Reservation/Reservation11";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,7 +23,11 @@ root.render(
                 <Route path="Restaurant1" element={<Restaurant1 />}></Route>
                 <Route path="SimpleInfo" element={<SimpleInfo />}></Route>
                 <Route path="MypageInfo" element={<MypageInfo />}></Route>
+                <Route path="MyPageReservation" element={<MyPageReservation />}></Route>
                 <Route path="Join" element={<Join />}></Route>
+                <Route path="MyPage" element={<MyPage />}></Route>
+                <Route path="Reservation11" element={<Reservation11 />}></Route>
+                <Route path="Reservation12" element={<Reservation12 />}></Route>
             </Routes>
         </Suspense>
     </BrowserRouter>

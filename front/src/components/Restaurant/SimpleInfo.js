@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import Navbar from "./NavBar";
+import Navbar2 from "../Nav/NavBar2";
 
 const SimpleInfo = () => {
   const [testStr1, setTestStr1] = useState(0);
@@ -159,7 +159,7 @@ const SimpleInfo = () => {
   // useInterval(fetchData, 3000);
   return (
       <>
-        <Navbar />
+        <Navbar2 />
         <div className="SContent-container">
           <div className="SInner-container">
             <div style={{ textAlign: "center" }} className="S-container">

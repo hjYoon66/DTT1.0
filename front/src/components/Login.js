@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
-import { Join } from "./Join";
-import { Test } from "./Test";
 import { useNavigate } from "react-router-dom";
-import {Nav} from "react-bootstrap";
 
 export const Login = () => {
   const [id, setId] = useState("");

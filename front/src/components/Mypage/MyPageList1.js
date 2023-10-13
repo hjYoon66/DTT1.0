@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import "../../../Version0.5/src/Service/MyPageList.css";
 
 const MyPageList1 = () => {
   const [reservations, setReservations] = useState([]);

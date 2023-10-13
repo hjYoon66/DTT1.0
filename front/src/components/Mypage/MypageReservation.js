@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
-import App from "../../../Version0.5/src/App";
 import MyPageList1 from "./MyPageList1";
 import MyPageList2 from "./MyPageList2";
-import "../../../Version0.5/src/Service/MypageReservation.css";
 import {useNavigate} from "react-router-dom";
 
 
@@ -17,7 +15,6 @@ const MypageReservation = () => {
     };
     return (
         <>
-            <App />
             <div className="MContent-container">
                 <div className="MInner-container">
                     <div style={{ textAlign: "center" }} className="M-container">
