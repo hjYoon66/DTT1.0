@@ -796,20 +796,6 @@ h2 {
   border-radius: 5px;
 }
 
-/*.reservation-submit {*/
-/*  background-color: #007BFF;*/
-/*  color: #fff;*/
-/*  border: none;*/
-/*  padding: 10px 20px;*/
-/*  border-radius: 5px;*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*.reservation-submit:hover {*/
-/*  background-color: #0056b3;*/
-/*}*/
-
-
 /************ Login Css ************/
 .form-container button {
   background-color: #ffffff;
@@ -867,4 +853,70 @@ h2 {
 .form-containerJ button:hover {
   background-color: #0056b3;
 }
+
+
+/************ Predict Css ************/
+/* styles.css */
+.PredictInner-container {
+  display: flex;
+  flex-direction: column; /* Change to 'row' */
+  align-items: center;
+  padding: 250px;
+  height: 100vh;
+  background-image: url("./assets/img/banner-bg.png");
+}
+
+.Predict-container {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.Predict-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.Predict-form {
+  display: flex;
+  flex-direction: column; /* Change to 'column' */
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Predict-input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.Predict-submit {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Predict-submit:hover {
+  background-color: #0056b3;
+}
+
+.Predict-result {
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 
