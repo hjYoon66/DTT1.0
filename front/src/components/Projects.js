@@ -3,6 +3,9 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -32,19 +35,19 @@ const Projects = () => {
     {
       title: "Restaurant 4",
       description1: "매장 준비중입니다.",
-      imgUrl: projImg1,
+      imgUrl: projImg4,
       pageUrl: "/Restaurant1",
     },
     {
       title: "Restaurant 5",
       description1: "매장 준비중입니다.",
-      imgUrl: projImg2,
+      imgUrl: projImg5,
       pageUrl: "/Restaurant1",
     },
     {
       title: "Restaurant 6",
       description1: "매장 준비중입니다.",
-      imgUrl: projImg3,
+      imgUrl: projImg6,
       pageUrl: "/Restaurant1",
     },
   ];

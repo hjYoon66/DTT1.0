@@ -1,10 +1,10 @@
 import {useState, useEffect} from "react";
 import {Navbar, Nav, Container} from "react-bootstrap";
-import navIcon1 from "../../assets/img/nav-icon1.svg";
-import navIcon2 from "../../assets/img/nav-icon2.svg";
-import navIcon3 from "../../assets/img/nav-icon3.svg";
+// import navIcon1 from "../../assets/img/nav-icon1.svg";
+// import navIcon2 from "../../assets/img/nav-icon2.svg";
+// import navIcon3 from "../../assets/img/nav-icon3.svg";
 import {HashLink} from "react-router-hash-link";
-import {BrowserRouter as Router, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import {useCookies} from "react-cookie";
@@ -16,9 +16,6 @@ const NavBar2 = () => {
     const users = cookies.user;
     const movePage = useNavigate();
 
-    const moveContact = () => {
-        movePage("/");
-    }
     const moveLogin = () => {
         alert("로그인이 필요한 기능입니다.");
     }
@@ -30,7 +27,7 @@ const NavBar2 = () => {
         setCookie("user", "", "/");
     };
     const movePredict = () => {
-        movePage("/");
+        movePage("/Predict");
     }
 
     useEffect(() => {

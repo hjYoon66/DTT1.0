@@ -11,6 +11,7 @@ import Join from "./components/Join";
 import MyPage from "./components/Mypage/MyPage";
 import Reservation12 from "./components/Reservation/Reservation12";
 import Reservation11 from "./components/Reservation/Reservation11";
+import Predict from "./components/Restaurant/Predict";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -28,6 +29,7 @@ root.render(
                 <Route path="MyPage" element={<MyPage />}></Route>
                 <Route path="Reservation11" element={<Reservation11 />}></Route>
                 <Route path="Reservation12" element={<Reservation12 />}></Route>
+                <Route path="Predict" element={<Predict />}></Route>
             </Routes>
         </Suspense>
     </BrowserRouter>
