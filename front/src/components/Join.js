@@ -56,10 +56,10 @@ const Join = () => {
               <div className="form-group">
                 <input
                     type="text"
-                    name="logname"
+                    name="name"
                     className="form-style"
                     placeholder="Your Name"
-                    id="logname"
+                    id="name"
                     autoComplete="off"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
@@ -71,10 +71,10 @@ const Join = () => {
               <div className="form-group mt-2">
                 <input
                     type="text"
-                    name="logID"
+                    name="id"
                     className="form-style"
                     placeholder="Your ID"
-                    id="logID"
+                    id="id"
                     autoComplete="off"
                     value={id}
                     onChange={(e) => setId(e.target.value)}
@@ -86,10 +86,10 @@ const Join = () => {
               <div className="form-group mt-2">
                 <input
                     type="password"
-                    name="logpass"
+                    name="password"
                     className="form-style"
                     placeholder="Your Password"
-                    id="logpass"
+                    id="password"
                     autoComplete="off"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -102,10 +102,10 @@ const Join = () => {
               <div className="form-group mt-2">
                 <input
                     type="text"
-                    name="logpnum"
+                    name="phoneNumber"
                     className="form-style"
                     placeholder="Your Phone Number"
-                    id="logpnum"
+                    id="phoneNumber"
                     autoComplete="off"
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
@@ -118,10 +118,10 @@ const Join = () => {
               <div className="form-group mt-2">
                 <input
                     type="date"
-                    name="logdate"
+                    name="birthDate"
                     className="form-style2"
                     placeholder="생년월일"
-                    id="logdate"
+                    id="birthDate"
                     autoComplete="off"
                     value={birthDate}
                     onChange={(e) => setBirthDate(e.target.value)}
@@ -130,7 +130,8 @@ const Join = () => {
                   <Icon icon="ic:baseline-calendar-month" />
                 </i>
               </div>
-              <a href="#" className="btn mt-4">가입하기</a>
+              {/*<a href="#" className="btn mt-4">가입하기</a>*/}
+              <button type="submit" className="btn mt-4">회원 가입</button>
             </form>
           </div>
 
