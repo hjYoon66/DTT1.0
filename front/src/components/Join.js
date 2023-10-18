@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import NavBar3 from "./Nav/NavBar3";
+import "./Join.css";
+import { Icon } from '@iconify/react';
 const Join = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -45,47 +47,95 @@ const Join = () => {
   };
 
   return (
-    <>
-      <NavBar3 />
-      <div className="parent-containerJ" id="Join">
-        <div className="form-containerJ">
-          <h2>DTT 회원가입</h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="ID"
-              value={id}
-              onChange={(e) => setId(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="이름"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="전화번호"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-            <input
-              type="date"
-              placeholder="생년월일"
-              value={birthDate}
-              onChange={(e) => setBirthDate(e.target.value)}
-            />
-            <button type="submit">회원 가입</button>
-          </form>
+      <>
+        <NavBar3 />
+        <div className="parent-containerJ" id="Join">
+          <div className="form-containerJ">
+            <h4 className="mb-4 pb-3">DTT Sign Up</h4>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input
+                    type="text"
+                    name="logname"
+                    className="form-style"
+                    placeholder="Your Name"
+                    id="logname"
+                    autoComplete="off"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <i className="input-icon uil uil-user">
+                  <Icon icon="uil:user" />
+                </i>
+              </div>
+              <div className="form-group mt-2">
+                <input
+                    type="text"
+                    name="logID"
+                    className="form-style"
+                    placeholder="Your ID"
+                    id="logID"
+                    autoComplete="off"
+                    value={id}
+                    onChange={(e) => setId(e.target.value)}
+                />
+                <i className="input-icon uil uil-at">
+                  <Icon icon="uil:at" />
+                </i>
+              </div>
+              <div className="form-group mt-2">
+                <input
+                    type="password"
+                    name="logpass"
+                    className="form-style"
+                    placeholder="Your Password"
+                    id="logpass"
+                    autoComplete="off"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <i className="input-icon uil uil-lock-alt">
+                  <Icon icon="uil:lock-alt" />
+                </i>
+              </div>
+
+              <div className="form-group mt-2">
+                <input
+                    type="text"
+                    name="logpnum"
+                    className="form-style"
+                    placeholder="Your Phone Number"
+                    id="logpnum"
+                    autoComplete="off"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+                <i className="input-icon uil uil-lock-alt">
+                  <Icon icon="tabler:phone" />
+                </i>
+              </div>
+
+              <div className="form-group mt-2">
+                <input
+                    type="date"
+                    name="logdate"
+                    className="form-style2"
+                    placeholder="생년월일"
+                    id="logdate"
+                    autoComplete="off"
+                    value={birthDate}
+                    onChange={(e) => setBirthDate(e.target.value)}
+                />
+                <i className="input-icon uil uil-lock-alt">
+                  <Icon icon="ic:baseline-calendar-month" />
+                </i>
+              </div>
+              <a href="#" className="btn mt-4">가입하기</a>
+            </form>
+          </div>
+
         </div>
-      </div>
-    </>
+      </>
   );
 };
 export default Join
