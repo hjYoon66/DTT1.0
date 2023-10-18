@@ -39,6 +39,9 @@ const NavBar1 = () => {
 
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+    const onUpdateActiveLink = (value) => {
+        setActiveLink(value);
+    };
 
     return (
         <>
@@ -55,14 +58,24 @@ const NavBar1 = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link
-                                className="navbar-link"
-                                onClick={moveInfo}
+                                // className="navbar-link"
+                                // onClick={moveInfo}
+                                href="#myreservation"
+                                className={
+                                    activeLink === "myreservation" ? "active navbar-link" : "navbar-link"
+                                }
+                                onClick={() => onUpdateActiveLink("myreservation")}
                             >
                                 예약 확인
                             </Nav.Link>
                             <Nav.Link
-                                className="navbar-link"
-                                onClick={moveRevise}
+                                href="#myinfo"
+                                className={
+                                    activeLink === "myinfo"
+                                        ? "active navbar-link"
+                                        : "navbar-link"
+                                }
+                                onClick={() => onUpdateActiveLink("myinfo")}
                             >
                                 개인정보수정
                             </Nav.Link>

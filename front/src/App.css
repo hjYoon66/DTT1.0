@@ -646,44 +646,98 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 /************ MyPageInfo Css ************/
-.Info-container {
+.Info1-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
-  background-image: url("./assets/img/banner-bg.png");
 }
 
-.InfoInner-container {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  padding: 20px;
-  max-width: 400px;
+.Info2-container {
+  /*border: 1px solid #ddd;*/
+  padding: 10px;
+  max-width: 1000px;
   width: 100%;
+  margin-top: 20px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.InfoForm-container {
+.InfoForm {
+  max-width: 1200px; /* 폼의 최대 너비를 조정 */
+  width: 100%;
+  text-align: left;
+}
+
+/* Disabled 입력 필드 배경색 스타일 */
+.Form.Control:disabled {
+  background-color: #f5f5f5; /* 어두운 배경색 설정 */
+  color: #adb5bd; /* 텍스트 색상 변경 */
+  cursor: not-allowed; /* 커서를 금지 표시로 변경 */
+}
+
+.M-container {
   margin: 20px;
 }
 
-.InfoForm-container h2 {
-  font-size: 24px;
+.M-container h2 {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
 }
+.M-container p {
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+.M-container h3 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+}
+/*.Info-container {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  height: 100vh;*/
+/*  !*background-image: url("./assets/img/banner-bg.png");*!*/
+/*}*/
 
-.InfoForm-container form {
-  display: flex;
-  flex-direction: column;
-}
+/*.InfoInner-container {*/
+/*  background-color: #f0f0f0;*/
+/*  border: 1px solid #ddd;*/
+/*  padding: 20px;*/
+/*  max-width: 400px;*/
+/*  width: 100%;*/
+/*  text-align: center;*/
+/*  border-radius: 10px;*/
+/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+/*}*/
 
-.InfoForm-container input {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
+/*.InfoForm-container {*/
+/*  margin: 20px;*/
+/*}*/
+
+/*.InfoForm-container h2 {*/
+/*  font-size: 24px;*/
+/*}*/
+
+/*.InfoForm-container form {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*.InfoForm-container input {*/
+/*  margin: 10px 0;*/
+/*  padding: 10px;*/
+/*  border: 1px solid #ccc;*/
+/*  border-radius: 5px;*/
+/*}*/
 
 /*.InfoForm-container button {*/
 /*  color: #fff;*/
@@ -726,13 +780,14 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
 }
 
 .MInner-container {
-  border: 1px solid #ddd;
-  padding: 20px;
-  max-width: 600px;
+  /*border: 1px solid #ddd;*/
+  padding: 10px;
+  margin-top: 60px;
+  max-width: 1000px;
   width: 100%;
   text-align: center;
   border-radius: 10px;
@@ -744,15 +799,49 @@ h2 {
 }
 
 .M-container h2 {
-  font-size: 24px;
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+}
+.M-container p {
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  margin: 14px auto 30px auto;
+  text-align: center;
+  width: 56%;
+}
+.M-container h3 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
 }
 
-.Mypage-container1,
-.Mypage-container2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.Tab-container{
   margin: 20px;
+  font-size: 28px;
+  color:white;
+}
+
+
+.Mypage-container1{}
+.Mypage-container2 h2{
+  margin-top: 30px;
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  color: #dddddd;
+}
+
+.MyTable{
+  font-size: 20px;
+}
+.MyTable tr, .MyTable td {
+  color: white; /* 텍스트 색상을 흰색으로 설정 */
+}
+.table {
+  color: white; /* 텍스트 색상을 흰색으로 설정 */
 }
 
 /************ Reservation Css ************/

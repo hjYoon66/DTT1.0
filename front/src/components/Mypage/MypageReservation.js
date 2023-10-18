@@ -3,6 +3,9 @@ import { useCookies } from "react-cookie";
 import MyPageList1 from "./MyPageList1";
 import MyPageList2 from "./MyPageList2";
 import {useNavigate} from "react-router-dom";
+import Badge from 'react-bootstrap/Badge';
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
 
 
 const MypageReservation = () => {
@@ -10,23 +13,35 @@ const MypageReservation = () => {
     const [cookies, setCookie] = useCookies(["user"]);
     const users = cookies.user;
     const movePage = useNavigate();
+    const [key, setKey] = useState('매장1');
     const moveMyPageInfo = () => {
         movePage("/MypageInfo");
     };
     return (
         <>
-            <div className="MContent-container">
+            <div className="MContent-container" id="myreservation">
                 <div className="MInner-container">
                     <div style={{ textAlign: "center" }} className="M-container">
-                        <h2>{users}님의 예약현황입니다.</h2>
-                        <div className="Mypage-container1">
-                        <MyPageList1 />
+                        <h2>예약 확인</h2>
+                        <p>Please check your future own reservation!</p>
+                        <hr />
 
-                        </div>
-                        <div className="Mypage-container2">
-                        <MyPageList2 />
-
-                        </div>
+                        <h3><Badge bg="secondary">{users}</Badge>님의 예약현황</h3>
+                    </div>
+                    <div className="Tab-container">
+                        <Tabs
+                            id="controlled-tab-example"
+                            activeKey={key}
+                            onSelect={(k) => setKey(k)}
+                            className="mb-3"
+                        >
+                            <Tab eventKey="매장1" title="매장1">
+                                <MyPageList1 />
+                            </Tab>
+                            <Tab eventKey="매장2" title="매장2">
+                                <MyPageList2 />
+                            </Tab>
+                            </ Tabs>
                     </div>
                 </div>
             </div>
@@ -35,3 +50,4 @@ const MypageReservation = () => {
 };
 
 export default MypageReservation;
+

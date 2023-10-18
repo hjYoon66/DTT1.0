@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import Table from "react-bootstrap/Table";
 
-const MyPageList = () => {
+const MyPageList2 = () => {
   const [reservations, setReservations] = useState([]);
   const [cookies, setCookie] = useCookies(["user"]);
   const users = cookies.user;
@@ -25,35 +26,38 @@ const MyPageList = () => {
   };
 
   return (
-    <>
-      <h2>매장 2</h2>
-      {reservations.map((reservation) =>
-        reservation.name === users ? (
-          <div className="mypage-container">
-            <table className="mypage-table">
-              <thead>
+      <div className="Mypage-container2">
+        {reservations.length === 0 ? (
+            <p>No reservations</p>
+        ) : (
+            <>
+              <Table striped bordered hover className="mytable">
+                <thead>
                 <tr>
                   <th>테이블 번호</th>
                   <th>날짜</th>
                   <th>시간</th>
                   <th>예약 인원</th>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{reservation.tableN}</td>
-                  <td>{reservation.date}</td>
-                  <td>{reservation.time}</td>
-                  <td>{reservation.numOfGuests}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        ) : null
-      )}
-      {reservations.length === 0 && <p>No reservations</p>}
-    </>
+                </thead>
+                <tbody>
+                {reservations
+                    .filter((reservation) => reservation.name === users)
+                    .map((reservation, index) => (
+                        <tr key={index}>
+                          <td>{reservation.tableN}</td>
+                          <td>{reservation.date}</td>
+                          <td>{reservation.time}</td>
+                          <td>{reservation.numOfGuests}</td>
+                        </tr>
+                    ))}
+                </tbody>
+              </Table>
+            </>
+        )}
+      </div>
   );
+
 };
 
-export default MyPageList;
+export default MyPageList2;
