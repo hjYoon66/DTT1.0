@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import NavBar2 from "../Nav/NavBar2";
-// import S1ReservationList1 from "./S1ReservationList1";
+import S1ReservationList1 from "./S1ReservationList1";
 
 const Reservation11 = () => {
     const dateNow = new Date();
@@ -144,10 +144,10 @@ const Reservation11 = () => {
                                 </button>
                             </form>
                         </div>
-                        {/*<S1ReservationList1 />*/}
                     </div>
                 </div>
             </div>
+            <S1ReservationList1 />
         </>
     );
 };
