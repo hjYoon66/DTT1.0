@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavBar3 from "./Nav/NavBar3";
 import "./Join.css";
 import { Icon } from '@iconify/react';
+
 const Join = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -57,7 +58,7 @@ const Join = () => {
                 <input
                     type="text"
                     name="name"
-                    className="form-style"
+                    className="form-style2"
                     placeholder="Your Name"
                     id="name"
                     autoComplete="off"
@@ -72,7 +73,7 @@ const Join = () => {
                 <input
                     type="text"
                     name="id"
-                    className="form-style"
+                    className="form-style2"
                     placeholder="Your ID"
                     id="id"
                     autoComplete="off"
@@ -87,7 +88,7 @@ const Join = () => {
                 <input
                     type="password"
                     name="password"
-                    className="form-style"
+                    className="form-style2"
                     placeholder="Your Password"
                     id="password"
                     autoComplete="off"
@@ -103,7 +104,7 @@ const Join = () => {
                 <input
                     type="text"
                     name="phoneNumber"
-                    className="form-style"
+                    className="form-style2"
                     placeholder="Your Phone Number"
                     id="phoneNumber"
                     autoComplete="off"
@@ -131,10 +132,9 @@ const Join = () => {
                 </i>
               </div>
               {/*<a href="#" className="btn mt-4">가입하기</a>*/}
-              <button type="submit" className="btn mt-4">회원 가입</button>
+              <button type="submit"  className="btn mt-4">회원 가입</button>
             </form>
           </div>
-
         </div>
       </>
   );

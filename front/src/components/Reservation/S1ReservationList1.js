@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import "./S1ReservationList1.css";
 
 const S1ReservationList1 = () => {
     const [reservations, setReservations] = useState([]);
@@ -56,15 +57,18 @@ const S1ReservationList1 = () => {
     return (
         <div className="reservation-list-container">
             <h2>날짜 선택</h2>
-            <select
-                className="date-select"
-                value={selectedDate}
-                onChange={handleDateChange}>
-                <option value="">날짜를 선택해주세요</option>
-                {renderDateOptions()}
-            </select>
-            <div className="reservation-info">
-                <h3 className="info">예약 정보</h3>
+            <div className="form-group">
+                <select
+                    className="input-style"
+                    value={selectedDate}
+                    onChange={handleDateChange}>
+                    <option value="">날짜를 선택해주세요</option>
+                    {renderDateOptions()}
+                </select>
+            </div>
+
+            <div className="form-group2">
+                <h3>예약 정보</h3>
                 {reservations.length === 0 ? (
                     <p>예약 정보가 없습니다.</p>
                 ) : (

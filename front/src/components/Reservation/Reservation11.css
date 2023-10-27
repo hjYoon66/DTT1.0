@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-h4 {
+h2 {
     font-weight: 600;
 }
 
-.form-containerJ{
+.RInner-container{
     background-color: rgba(32, 33, 43, 0.56);
     border: 2px solid rgba(32, 33, 43, 0.56);
+    color: rgb(222, 206, 238);
     margin-top: 70px;
 }
 
 .form-group{
     position: relative;
     display: block;
-    margin: 50px;
+    margin: 0px;
 
 }
-.form-style {
+.reservation-input {
     padding: 13px 20px;
-    padding-left: 55px;
-    text-indent: 33px; /*입력 위치 공백*/
+    padding-left: 50px;
+    text-indent: 3px; /*입력 위치 공백*/
     height: 48px;
     width: 100%;
     font-weight: 500;
@@ -38,7 +39,7 @@ h4 {
 .form-style2 {
     padding: 13px 20px;
     padding-left: 55px;
-    text-indent: 33px; /*입력 위치 공백*/
+    text-indent: 17px; /*입력 위치 공백*/
     height: 48px;
     width: 100%;
     font-weight: 500;
@@ -56,8 +57,8 @@ h4 {
 }
 
 
-.form-style:focus,
-.form-style:active {
+.reservation-input:focus,
+.reservation-input:active {
     border: none;
     outline: none;
     box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
@@ -74,8 +75,8 @@ h4 {
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
 }
-.form-group input::placeholder {
-    text-indent: 33px; /* 원하는 만큼의 왼쪽 공백 크기를 지정하세요 */
+.reservation-input input::placeholder {
+    text-indent: 5px; /* 원하는 만큼의 왼쪽 공백 크기를 지정하세요 */
     color: #c4c3ca;
     opacity: 0.7;
     transition: all 200ms linear;
@@ -108,7 +109,7 @@ h4 {
     border: none;
 
     background-color: #4d4d5e !important;
-    color: #939090;
+    color: #cbcaca;
     box-shadow: 0 8px 24px 0 rgba(64, 19, 82, 0.2);
 }
 

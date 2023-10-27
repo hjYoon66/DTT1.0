@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-h4 {
+h2 {
     font-weight: 600;
 }
 
-.form-containerJ{
+h3 {
+    margin-top: 30px;
+    color: rgba(225, 225, 225, 0.98);
+    font-weight: 600;
+}
+
+.reservation-list-container{
     background-color: rgba(32, 33, 43, 0.56);
     border: 2px solid rgba(32, 33, 43, 0.56);
     margin-top: 70px;
@@ -13,13 +19,21 @@ h4 {
 .form-group{
     position: relative;
     display: block;
-    margin: 50px;
+    margin: 0px;
 
 }
-.form-style {
+
+.form-group2{
+    position: relative;
+    display: block;
+    background-color: rgba(169, 165, 175, 0.13);
+    margin-top: 0px;
+}
+
+.input-style {
     padding: 13px 20px;
     padding-left: 55px;
-    text-indent: 33px; /*입력 위치 공백*/
+    text-indent: 1px; /*입력 위치 공백*/
     height: 48px;
     width: 100%;
     font-weight: 500;
@@ -38,7 +52,7 @@ h4 {
 .form-style2 {
     padding: 13px 20px;
     padding-left: 55px;
-    text-indent: 33px; /*입력 위치 공백*/
+    text-indent: 17px; /*입력 위치 공백*/
     height: 48px;
     width: 100%;
     font-weight: 500;

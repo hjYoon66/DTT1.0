@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import NavBar2 from "../Nav/NavBar2";
 import S1ReservationList1 from "./S1ReservationList1";
+import "./Reservation11.css";
 
 const Reservation11 = () => {
     const dateNow = new Date();
@@ -104,44 +105,49 @@ const Reservation11 = () => {
                         <div className="reservation-form-container">
                             <h2 className="reservation-form-heading">매장 1 Table 1 예약하기</h2>
                             <form className="reservation-form" onSubmit={handleFormSubmit}>
-                                <input
-                                    className="reservation-input"
-                                    type="text"
-                                    placeholder={users}
-                                    value={users}
-                                    onChange={handleInputChange}
-                                    disabled
-                                />
-                                <input
-                                    className="reservation-input"
-                                    type="date"
-                                    value={date}
-                                    min={todayDate}
-                                    onChange={(e) =>
-                                        setDate(
-                                            e.target.value >= todayDate ? e.target.value : todayDate
-                                        )
-                                    }
-                                />
-                                <select
-                                    className="reservation-input"
-                                    type="time"
-                                    value={time}
-                                    onChange={(e) => setTime(e.target.value)}>
-                                    <option value="">시간 선택</option>
-                                    {generateHourOptions()}
-                                </select>
-
-                                <input
-                                    className="reservation-input"
-                                    type="number"
-                                    placeholder="예약 인원"
-                                    value={numOfGuests}
-                                    onChange={(e) => setNumOfGuests(e.target.value)}
-                                />
-                                <button className="reservation-submit" type="submit">
-                                    예약 하기
-                                </button>
+                                <div className="form-group">
+                                    <input
+                                        className="reservation-input"
+                                        type="text"
+                                        placeholder={users}
+                                        value={users}
+                                        onChange={handleInputChange}
+                                        disabled
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <input
+                                        className="reservation-input"
+                                        type="date"
+                                        value={date}
+                                        min={todayDate}
+                                        onChange={(e) =>
+                                            setDate(
+                                                e.target.value >= todayDate ? e.target.value : todayDate
+                                            )
+                                        }
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <select
+                                        className="reservation-input"
+                                        type="time"
+                                        value={time}
+                                        onChange={(e) => setTime(e.target.value)}>
+                                        <option value="">시간 선택</option>
+                                        {generateHourOptions()}
+                                    </select>
+                                </div>
+                                <div className="form-group">
+                                    <input
+                                        className="reservation-input"
+                                        type="number"
+                                        placeholder="예약 인원"
+                                        value={numOfGuests}
+                                        onChange={(e) => setNumOfGuests(e.target.value)}
+                                    />
+                                </div>
+                                <button type="submit"  className="btn mt-4">예약 하기</button>
                             </form>
                         </div>
                     </div>

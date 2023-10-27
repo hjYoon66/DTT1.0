@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import NavBar2 from "../Nav/NavBar2";
+import "./Predict.css";
 
 const Predict = () => {
     const dateNow = new Date();
@@ -65,47 +66,49 @@ const Predict = () => {
         <>
             <NavBar2/>
             <div className="PredictInner-container">
-                <div className="Predict-container">
-                    <h2 className="Predict-title">예측하기</h2>
-                </div>
                 <form className="Predict-form" onSubmit={handleFormSubmit}>
-                    <select
-                        className="Predict-input"
-                        value={table === "1" ? "table1" : "table2"}
-                        onChange={(e) => {
-                            const value = e.target.value === "table1" ? "1" : "2";
-                            setTable(value);
-                        }}>
-                        <option value="">테이블 선택</option>
-                        <option value="table1">Table 1</option>
-                        <option value="table2">Table 2</option>
-                    </select>
-                    <input
-                        className="Predict-input"
-                        type="date"
-                        value={date}
-                        min={todayDate}
-                        onChange={
-                            (e) =>
-                                setDate(
-                                    e.target.value >= todayDate && e.target.value <= futureDate
-                                        ? e.target.value
-                                        : todayDate
-                                )
-                            // setDate((e.target.value >= todayDate) && (e.target.value <=todayDate-) ? e.target.value : todayDate)
-                        }
-                    />
-                    <select
-                        className="Predict-input"
-                        type="time"
-                        value={time}
-                        onChange={(e) => setTime(e.target.value)}>
-                        <option value="">시간 선택</option>
-                        {generateHourOptions()}
-                    </select>
-                    <button className="Predict-submit" type="submit">
-                        예측 하기
-                    </button>
+                    <h2 className="Predict-title mb-2">예측하기</h2>
+                    <div className="form-group mt-3">
+                        <select
+                            className="form-style"
+                            value={table === "1" ? "table1" : "table2"}
+                            onChange={(e) => {
+                                const value = e.target.value === "table1" ? "1" : "2";
+                                setTable(value);
+                            }}>
+                            <option value="">테이블 선택</option>
+                            <option value="table1">Table 1</option>
+                            <option value="table2">Table 2</option>
+                        </select>
+                    </div>
+                    <div className="form-group mt-3">
+                        <input
+                            className="form-style"
+                            type="date"
+                            value={date}
+                            min={todayDate}
+                            onChange={
+                                (e) =>
+                                    setDate(
+                                        e.target.value >= todayDate && e.target.value <= futureDate
+                                            ? e.target.value
+                                            : todayDate
+                                    )
+                                // setDate((e.target.value >= todayDate) && (e.target.value <=todayDate-) ? e.target.value : todayDate)
+                            }
+                        />
+                    </div>
+                    <div className="form-group mt-3">
+                        <select
+                            className="form-style"
+                            type="time"
+                            value={time}
+                            onChange={(e) => setTime(e.target.value)}>
+                            <option value="">시간 선택</option>
+                            {generateHourOptions()}
+                        </select>
+                    </div>
+                    <button type="submit"  className="btn mt-4">예측 하기</button>
                 </form>
                 {predict === "" ? (
                     <></>
