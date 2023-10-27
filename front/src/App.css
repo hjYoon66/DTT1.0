@@ -453,7 +453,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Projects Css ************/
 .contact {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
-  padding: 60px 0 200px 0;
+  padding: 60px 0 80px 0;
 }
 .contact img {
   width: 92%;
@@ -461,7 +461,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .contact h2 {
   font-size: 45px;
   font-weight: 700;
-  margin-bottom: 30px;
 }
 .contact form input,
 .contact form textarea {
@@ -640,10 +639,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: red;
 }
 
-/************ MyPage Css ************/
-
-/* MypageInfo와 MypageReservation 컴포넌트 스타일 */
-
 
 /************ MyPageInfo Css ************/
 .Info1-container {
@@ -700,56 +695,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-weight: 700;
   text-align: left;
 }
-/*.Info-container {*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*  align-items: center;*/
-/*  height: 100vh;*/
-/*  !*background-image: url("./assets/img/banner-bg.png");*!*/
-/*}*/
-
-/*.InfoInner-container {*/
-/*  background-color: #f0f0f0;*/
-/*  border: 1px solid #ddd;*/
-/*  padding: 20px;*/
-/*  max-width: 400px;*/
-/*  width: 100%;*/
-/*  text-align: center;*/
-/*  border-radius: 10px;*/
-/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
-/*}*/
-
-/*.InfoForm-container {*/
-/*  margin: 20px;*/
-/*}*/
-
-/*.InfoForm-container h2 {*/
-/*  font-size: 24px;*/
-/*}*/
-
-/*.InfoForm-container form {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*}*/
-
-/*.InfoForm-container input {*/
-/*  margin: 10px 0;*/
-/*  padding: 10px;*/
-/*  border: 1px solid #ccc;*/
-/*  border-radius: 5px;*/
-/*}*/
-
-/*.InfoForm-container button {*/
-/*  color: #fff;*/
-/*  border: none;*/
-/*  padding: 10px 20px;*/
-/*  border-radius: 5px;*/
-/*  cursor: pointer;*/
-/*}*/
-
-/*.InfoForm-container button:hover {*/
-/*  background-color: #0056b3;*/
-/*}*/
 
 /************ MyPageReservation Css ************/
 .MContent-container {
@@ -1018,13 +963,11 @@ h2 {
   margin: 0 auto;
 }
 
-/* Styles for the heading */
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Styles for the date select */
 .date-select {
   width: 100%;
   padding: 10px;
@@ -1034,7 +977,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Styles for the reservation info */
 .reservation-info {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -1043,20 +985,17 @@ h2 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles for the info heading */
 .info {
   color: #333;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-/* Styles for the table */
 .reservation-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Styles for table headers */
 .reservation-table th {
   background-color: #333;
   color: #fff;
@@ -1064,20 +1003,60 @@ h2 {
   text-align: left;
 }
 
-/* Styles for table rows */
 .reservation-table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Styles for table data cells */
 .reservation-table td {
   padding: 10px;
 }
 
-/* Styles for the "예약 정보가 없습니다." message */
 .reservation-table td[colspan="3"] {
   font-style: italic;
   color: #888;
 }
+
+
+
+/************ TeamIntro Css ************/
+/* Styles for the person-info-container */
+.person-info-container {
+  display: flex;
+  flex-direction: column; /* Set the flex direction to column */
+  align-items: center;
+  background-color: #E6E6FA;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center; /* Center-align the contents */
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+/* Styles for the person photo */
+.person-photo {
+  width: 150px; /* Adjust the width as needed */
+  height: 200px; /* Adjust the height as needed */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Styles for the person name */
+.person-name {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
+}
+.person-details h2 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+.person-details p {
+  font-size: 15px;
+  color: black;
+  margin-bottom: 0rem;
+}
+
 
 
