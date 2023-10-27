@@ -24,31 +24,31 @@ const Projects = () => {
       description1: "tel: 987-654-321",
       description2: "Opening Hour: 09:00 AM - 06:00 PM",
       imgUrl: projImg2,
-      pageUrl: "/Restaurant1",
+      pageUrl: "",
     },
     {
       title: "Restaurant 3",
       description1: "매장 준비중입니다.",
       imgUrl: projImg3,
-      pageUrl: "/Restaurant1",
+      pageUrl: "",
     },
     {
       title: "Restaurant 4",
       description1: "매장 준비중입니다.",
       imgUrl: projImg4,
-      pageUrl: "/Restaurant1",
+      pageUrl: "",
     },
     {
       title: "Restaurant 5",
       description1: "매장 준비중입니다.",
       imgUrl: projImg5,
-      pageUrl: "/Restaurant1",
+      pageUrl: "",
     },
     {
       title: "Restaurant 6",
       description1: "매장 준비중입니다.",
       imgUrl: projImg6,
-      pageUrl: "/Restaurant1",
+      pageUrl: "",
     },
   ];
 
