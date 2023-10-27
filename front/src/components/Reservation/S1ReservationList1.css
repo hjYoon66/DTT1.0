@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
-
-h2 {
-    font-weight: 600;
-}
-
 h3 {
     margin-top: 30px;
-    color: rgba(225, 225, 225, 0.98);
+    color: rgb(40, 40, 40);
     font-weight: 600;
 }
 
 .reservation-list-container{
-    background-color: rgba(32, 33, 43, 0.56);
-    border: 2px solid rgba(32, 33, 43, 0.56);
+    background-color: rgba(241, 243, 245, 0.66);
+    border: 2px solid rgba(241, 243, 245, 0.66);
+    color: rgb(40, 40, 40);
     margin-top: 70px;
 }
 
@@ -123,11 +119,11 @@ h3 {
 
     background-color: #4d4d5e !important;
     color: #939090;
-    box-shadow: 0 8px 24px 0 rgba(64, 19, 82, 0.2);
+    box-shadow: 0 8px 24px 0 rgba(182, 180, 182, 0.98);
 }
 
 .btn:hover{
     background-color: #111111 !important;
     color: rgba(123, 114, 138, 0.84);
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+    box-shadow: 0 8px 24px 0 rgba(182, 180, 182, 0.98);
 }

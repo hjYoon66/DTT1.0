@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-h2 {
-    font-weight: 600;
-    color: #c4c3ca;
-}
+
 
 .Predict-form{
-    background-color: rgba(32, 33, 43, 0.56);
-    border: 2px solid rgba(32, 33, 43, 0.56);
+    background-color: rgba(241, 243, 245, 0.66);
+    border: 2px solid rgba(241, 243, 245, 0.66);
+    color: rgb(40, 40, 40);
     padding: 25px 100px;
 }
 
@@ -74,11 +72,11 @@ h2 {
 
     background-color: #4d4d5e !important;
     color: rgba(234, 230, 230, 0.93);
-    box-shadow: 0 8px 24px 0 rgba(64, 19, 82, 0.2);
+    box-shadow: 0 8px 24px 0 rgba(182, 180, 182, 0.98);
 }
 
 .btn:hover{
     background-color: #111111 !important;
     color: rgba(123, 114, 138, 0.84);
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+    box-shadow: 0 8px 24px 0 rgba(182, 180, 182, 0.98);
 }

@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
-h2 {
-    font-weight: 600;
-}
 
 .RInner-container{
-    background-color: rgba(32, 33, 43, 0.56);
-    border: 2px solid rgba(32, 33, 43, 0.56);
-    color: rgb(222, 206, 238);
+    background-color: rgba(241, 243, 245, 0.66);
+    border: 2px solid rgba(241, 243, 245, 0.66);
+    color: rgb(40, 40, 40);
     margin-top: 70px;
 }
 
@@ -76,7 +73,7 @@ h2 {
     transition: all 200ms linear;
 }
 .reservation-input input::placeholder {
-    text-indent: 5px; /* 원하는 만큼의 왼쪽 공백 크기를 지정하세요 */
+    text-indent: 53px; /* 원하는 만큼의 왼쪽 공백 크기를 지정하세요 */
     color: #c4c3ca;
     opacity: 0.7;
     transition: all 200ms linear;
@@ -110,11 +107,11 @@ h2 {
 
     background-color: #4d4d5e !important;
     color: #cbcaca;
-    box-shadow: 0 8px 24px 0 rgba(64, 19, 82, 0.2);
+    box-shadow: 0 8px 24px 0 rgba(182, 180, 182, 0.98);
 }
 
 .btn:hover{
     background-color: #111111 !important;
     color: rgba(123, 114, 138, 0.84);
-    box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+    box-shadow: 0 8px 24px 0 rgba(182, 180, 182, 0.98);
 }
