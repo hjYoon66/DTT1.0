@@ -59,7 +59,6 @@ export const State2 = (props) => {
                     object={tableReserved2.scene}
                     scale={4.5}
                     position={[30, 3, -20]}
-                    // children-0-castShadow
                 />
             </>
         );
@@ -70,7 +69,12 @@ export const State2 = (props) => {
                     object={tableOccupied2.scene}
                     scale={4.5}
                     position={[30, 3, -20]}
-                    // children-0-castShadow
+                />
+                <primitive
+                    object={Human3.scene}
+                    scale={0.13}
+                    position={[19, 5, -24.5]}
+                    rotation={[0, Math.PI / 2, 0]}
                 />
             </>
         );
@@ -81,7 +85,6 @@ export const State2 = (props) => {
                     object={tableInuse2.scene}
                     scale={5.5}
                     position={[30, 3, -20]}
-                    // children-0-castShadow
                 />
                 <primitive
                     object={Human3.scene}
@@ -98,7 +101,6 @@ export const State2 = (props) => {
                     object={tableAvail2.scene}
                     scale={4.5}
                     position={[30, 3, -20]}
-                    // children-0-castShadow
                 />
             </>
         );
@@ -109,7 +111,6 @@ export const State2 = (props) => {
                     object={tableAvail2.scene}
                     scale={4.5}
                     position={[30, 3, -20]}
-                    // children-0-castShadow
                 />
             </>
         );
