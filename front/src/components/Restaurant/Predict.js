@@ -16,29 +16,54 @@ const Predict = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
+        // try {
+        //     // 이미 예약된 데이터가 있는지 확인하는 요청
+        //     const response = await fetch(
+        //         `/reservation/data?date=${date}&time=${time}&tableN=${table}`,
+        //         {
+        //             method: "GET",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             },
+        //         }
+        //     );
+        //     if (response.ok) {
+        //         const data = await response.json();
+        //         console.log("ok");
+        //         setPredict(data);
+        //         const resultContainer = document.getElementById("resultContainer");
+        //         resultContainer.innerText = data; // 결과 값을 텍스트로 삽입
+        //     } else {
+        //         console.log("error");
+        //     }
+        // } catch (error) {
+        //     console.error("오류가 발생하였습니다.", error);
+        // }
+
         try {
-            // 이미 예약된 데이터가 있는지 확인하는 요청
-            const response = await fetch(
-                `/reservation/data?date=${date}&time=${time}&tableN=${table}`,
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                }
-            );
+            const data = { day: date, hour: time, rainfall:0.0, temperature: 22 };  // 보낼 데이터를 정의합니다.
+            console.log(data)
+
+            // Flask 서버에 POST 요청을 보냅니다.
+            const response = await fetch('http://localhost:5000/predict', {
+                method: 'POST',  // POST 요청을 보냅니다.
+                headers: {
+                    'Content-Type': 'application/json'  // 요청 본문의 타입을 JSON으로 설정합니다.
+                },
+                body: JSON.stringify(data)  // JSON 문자열로 변환하여 요청 본문에 담습니다.
+            });
+            console.log("hello")
             if (response.ok) {
-                const data = await response.json();
-                console.log("ok");
-                setPredict(data);
-                const resultContainer = document.getElementById("resultContainer");
-                resultContainer.innerText = data; // 결과 값을 텍스트로 삽입
+                const result = await response.json();  // 응답 본문을 JSON으로 해석합니다.
+                setPredict(result);  // 상태를 업데이트합니다.
+                console.log(result)
             } else {
-                console.log("error");
+                console.log('error');
             }
         } catch (error) {
             console.error("오류가 발생하였습니다.", error);
         }
+
     };
 
     function generateHourOptions() {
@@ -71,7 +96,7 @@ const Predict = () => {
                     <div className="form-group mt-3">
                         <select
                             className="form-style"
-                            value={table === "1" ? "table1" : "table2"}
+                            value={table === "1" ? "T1" : "T2"}
                             onChange={(e) => {
                                 const value = e.target.value === "table1" ? "1" : "2";
                                 setTable(value);
@@ -113,7 +138,7 @@ const Predict = () => {
                 {predict === "" ? (
                     <></>
                 ) : (
-                    <div className="Predict-result">{predict}% 확률로 예약이 있습니다.</div>
+                    <div className="Predict-result">{predict.result}</div>
                 )}
             </div>
         </>
