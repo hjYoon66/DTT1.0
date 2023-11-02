@@ -13,6 +13,7 @@ import Reservation12 from "./components/Reservation/Reservation12";
 import Reservation11 from "./components/Reservation/Reservation11";
 import Predict from "./components/Restaurant/Predict";
 import TeamIntro from "./components/TeamIntro";
+import PredictedRestaurant1 from "./components/Restaurant/PredictedRestaurant1";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -32,6 +33,7 @@ root.render(
                 <Route path="Reservation11" element={<Reservation11 />}></Route>
                 <Route path="Reservation12" element={<Reservation12 />}></Route>
                 <Route path="Predict" element={<Predict />}></Route>
+                <Route path="PredictedRestaurant1" element={<PredictedRestaurant1 />}></Route>
             </Routes>
         </Suspense>
     </BrowserRouter>

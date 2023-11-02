@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import NavBar2 from "../Nav/NavBar2";
 import "./Predict.css";
+import {useNavigate} from "react-router-dom";
 
 const Predict = () => {
     const dateNow = new Date();
@@ -9,39 +10,41 @@ const Predict = () => {
     const [time, setTime] = useState("");
     const [table, setTable] = useState("");
     const [predict, setPredict] = useState("");
+    const [weatherData, setWeatherData] = useState(null);
 
+    const movePage = useNavigate();
+
+    const movePre1 = () =>{
+        movePage("/PredictedRestaurant1")
+    }
     const currentDate = new Date();
     const oneWeekAgo = new Date(currentDate.getTime() + 7 * 24 * 60 * 60 * 1000);
     const futureDate = oneWeekAgo.toISOString().split("T")[0];
+
+    useEffect(() => {
+        fetchWeatherData();
+    }, []);
+
+    const fetchWeatherData = async () => {
+        const API_KEY = ""; // OpenWeatherMap API 키
+        const CITY_NAME = "Mokpo"; // 도시 이름
+
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}`);
+        const data = await response.json();
+        console.log("현재온도 : "+ (data.main.temp- 273.15) );
+        console.log(data);
+
+        setWeatherData(data);
+    };
+
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        // try {
-        //     // 이미 예약된 데이터가 있는지 확인하는 요청
-        //     const response = await fetch(
-        //         `/reservation/data?date=${date}&time=${time}&tableN=${table}`,
-        //         {
-        //             method: "GET",
-        //             headers: {
-        //                 "Content-Type": "application/json",
-        //             },
-        //         }
-        //     );
-        //     if (response.ok) {
-        //         const data = await response.json();
-        //         console.log("ok");
-        //         setPredict(data);
-        //         const resultContainer = document.getElementById("resultContainer");
-        //         resultContainer.innerText = data; // 결과 값을 텍스트로 삽입
-        //     } else {
-        //         console.log("error");
-        //     }
-        // } catch (error) {
-        //     console.error("오류가 발생하였습니다.", error);
-        // }
 
         try {
-            const data = { day: date, hour: time, rainfall:0.0, temperature: 22 };  // 보낼 데이터를 정의합니다.
+            const data = { day: date, hour: time, rainfall: 0.0, temperature: 22 };  // 보낼 데이터를 정의합니다.
+            // const data = { day: date, hour: time, rainfall: weatherData?.rain?.['1h'], temperature: weatherData?.main?.temp };  // 보낼 데이터를 정의합니다.
+
             console.log(data)
 
             // Flask 서버에 POST 요청을 보냅니다.
@@ -52,10 +55,10 @@ const Predict = () => {
                 },
                 body: JSON.stringify(data)  // JSON 문자열로 변환하여 요청 본문에 담습니다.
             });
-            console.log("hello")
             if (response.ok) {
                 const result = await response.json();  // 응답 본문을 JSON으로 해석합니다.
                 setPredict(result);  // 상태를 업데이트합니다.
+                movePage('/PredictedRestaurant1', { state: { predictResult: result.result, table: table } });
                 console.log(result)
             } else {
                 console.log('error');
