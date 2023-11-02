@@ -1057,6 +1057,24 @@ h2 {
   color: black;
   margin-bottom: 0rem;
 }
+.Future{
+  top: 20px; /* 위치를 조정하려면 이 값을 변경하세요 */
+  left: 20px; /* 위치를 조정하려면 이 값을 변경하세요 */
+  padding: 10px;
+  background-color: rebeccapurple;
+  border-radius: 5px;
+  font-size: 32px; /* 글자 크기를 조정하려면 이 값을 변경하세요 */
+  color: #333; /* 글자 색상을 조정하려면 이 값을 변경하세요 */
+  z-index: 2;
+}
 
-
-
+.table-status{
+  top: 20px; /* 위치를 조정하려면 이 값을 변경하세요 */
+  left: 20px; /* 위치를 조정하려면 이 값을 변경하세요 */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  font-size: 18px; /* 글자 크기를 조정하려면 이 값을 변경하세요 */
+  color: #333; /* 글자 색상을 조정하려면 이 값을 변경하세요 */
+  z-index: 2;
+}

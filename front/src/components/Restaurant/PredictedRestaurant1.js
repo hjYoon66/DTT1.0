@@ -36,6 +36,12 @@ const PredictedRestaurant1 = () => {
             <Navbar2/>
             <div className="SContent-container">
                 <div className="SInner-container">
+                    <div className = "Future">미래의 매장 모습</div>
+                    {predictResult === 1 ? (
+                        <div className="table-status">Table1이 사용 중일 것입니다..</div>
+                    ) : (
+                        <div className="table-status">Table1이 사용 중이 아닐 것입니다..</div>
+                    )}
                     <Canvas
                         style={{
                             width: "650px",
@@ -58,6 +64,8 @@ const PredictedRestaurant1 = () => {
                             position={[-8, -6, -20]}
                             // children-0-castShadow
                         />
+
+
 
                         <State1 state={state1}/>
 
