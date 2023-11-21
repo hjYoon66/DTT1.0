@@ -1,29 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import object1 from "../../assets/img/Building/realBuilding.glb";
+import React, {useState, useEffect, useRef} from "react";
+import {OrbitControls} from "@react-three/drei";
+import {Canvas, useLoader} from "@react-three/fiber";
+import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
+// import object1 from "../../assets/img/Building/realBuilding.glb";
+import object1 from "../../assets/img/Building/realBuild.glb";
 import object2 from "../../assets/img/Building/s1_table1.glb";
 import object3 from "../../assets/img/Building/s1_table2.glb";
 import {State1} from "./State1";
 import {State2} from "./State2";
-import Navbar2 from "../Nav/NavBar2";
-import axios from "axios";
 import {useNavigate} from "react-router-dom";
-import tableState1_1 from "../../assets/img/Signs/available1.glb";
-import tableState1_2 from "../../assets/img/Signs/inuse1.glb";
-import tableState1_3 from "../../assets/img/Signs/occupied1.glb";
-import tableState1_4 from "../../assets/img/Signs/reserved1.glb";
-import human1 from "../../assets/img/Human/Human_sit1-1.glb"; //glb파일 변경
-import human3 from "../../assets/img/Human/Human_sit1-2.glb"; //glb파일 변경
-import * as THREE from 'three';
+import Navbar2 from "../Nav/NavBar2";
 
 
 
-const ShowInterior1 = () => {
+const Restaurant1 = () => {
     const store = useLoader(GLTFLoader, object1);
     const table1 = useLoader(GLTFLoader, object2);
     const table2 = useLoader(GLTFLoader, object3);
+    const [state1, setState1] = useState("0");
+    const [state2, setState2] = useState("0");
     const movePage = useNavigate();
 
     const moveRes1 = () => {
@@ -32,6 +27,34 @@ const ShowInterior1 = () => {
     const moveRes2 = () => {
         movePage("/Reservation12");
     }
+    // const fetchData2 = async () => {
+    //   const response2 = await fetch("/table/1/2/status");
+    //   const data2 = await response2.json();
+    //   console.log(data2.type);
+    //   setState2(data2);
+    // }
+    const eventSource = new EventSource("/sse/listen");
+    useEffect(() => {
+        eventSource.onmessage = (event) => {
+            console.log("hi");
+            const eventD = JSON.parse(event.data);
+            const id = eventD.id.toString();
+            const status = eventD.status.toString();
+            console.log("Received event:", id);
+            if (id === "1") {
+                setState1(status);
+            } else if (id === "2") {
+                setState2(status);
+            } else {
+                console.log("not id");
+            }
+        };
+
+        // 컴포넌트가 언마운트될 때 EventSource를 닫습니다.
+        return () => {
+            eventSource.close();
+        };
+    }, []);
 
     return (
         <>
@@ -62,9 +85,8 @@ const ShowInterior1 = () => {
                             onClick={moveRes1}
                         />
 
-                        {/*<State1 state={state1}/>*/}
+                        <State1 state={state1}/>
 
-                        <State1 />
                         <primitive
                             object={table2.scene}
                             scale={3}
@@ -73,8 +95,7 @@ const ShowInterior1 = () => {
                             onClick={moveRes2}
                         />
 
-                        {/*<State2 state={state2}/>*/}
-                        <State2 />
+                        <State2 state={state2}/>
                         <directionalLight intensity={1}/>
                         <ambientLight intensity={1.2}/>
                         <spotLight
@@ -90,7 +111,8 @@ const ShowInterior1 = () => {
             </div>
         </>
 
-    );
+    )
+        ;
 };
 
-export default ShowInterior1;
+export default Restaurant1

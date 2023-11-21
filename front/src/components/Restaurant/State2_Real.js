@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import {useLoader} from "@react-three/fiber";
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader";
 import tableState2_1 from "../../assets/img/Signs/available2.glb";
@@ -8,9 +8,7 @@ import tableState2_4 from "../../assets/img/Signs/reserved2.glb";
 import human1 from "../../assets/img/Human/Human_sit1-1.glb"; //glb파일 변경
 import human3 from "../../assets/img/Human/Human_sit1-2.glb"; //glb파일 변경
 import * as THREE from 'three';
-import axios from "axios";
-
-export const State2 = () => {
+export const State2 = (props) => {
     const [reservations2, setReservations2] = useState([]);
     const tableAvail2 = useLoader(GLTFLoader, tableState2_1);
     const tableInuse2 = useLoader(GLTFLoader, tableState2_2);
@@ -21,8 +19,7 @@ export const State2 = () => {
     const animations_H1 = Human1.animations; //sit1애니메이션
     const Human3 = useLoader(GLTFLoader, human3);
     const animations_H3 = Human3.animations; //sit2애니메이션
-    // console.log("data2: " + props.state);
-
+    console.log("data2: " + props.state);
     useEffect(() => {
         // AnimationMixer 생성
         const mixer1 = new THREE.AnimationMixer(Human1.scene);
@@ -55,58 +52,7 @@ export const State2 = () => {
         animate(); // 애니메이션 루프 시작
     }, [animations_H1], [animations_H3]);
 
-    function useInterval(callback, delay) {
-        const savedCallback = useRef();
-
-        useEffect(() => {
-            savedCallback.current = callback;
-        }, [callback]);
-
-        useEffect(() => {
-            function tick() {
-                savedCallback.current();
-            }
-
-            if (delay !== null) {
-                const intervalId = setInterval(tick, delay);
-                return () => {
-                    clearInterval(intervalId);
-                };
-            }
-        }, [delay]);
-    }
-
-    const fetchData2 = async () => {
-        try {
-            const response1 = await fetch("/table/1/2/status");
-            const data1 = await response1.json();
-            setState2(data1);
-            console.log(state2);
-
-            // const response2 = await axios.get("/reservations/time");
-            // if (response2.status === 200) {
-            //     const data2 = response2.data;
-            //     setReservations2(data2);
-            //
-            //     const today = new Date();
-            //     reservations2.forEach((reservation) => {
-            //         if (reservation.date === today) {
-            //             setState2(4);
-            //         }
-            //     });
-            //     console.log(reservations2);
-            // } else {
-            //     console.error("Failed to fetch reservations:", response2.status);
-            // }
-            //
-        } catch (error) {
-            console.log("에러:", error);
-        }
-    };
-
-    useInterval(fetchData2, 5000);
-
-    if (state2 === 3) {
+    if (props.state === "3") {
         return (
             <>
                 <primitive
@@ -116,7 +62,7 @@ export const State2 = () => {
                 />
             </>
         );
-    } else if (state2 === 2) {
+    } else if (props.state === "2") {
         return (
             <>
                 <primitive
@@ -132,7 +78,7 @@ export const State2 = () => {
                 />
             </>
         );
-    } else if (state2 === 1) {
+    } else if (props.state === "1") {
         return (
             <>
                 <primitive
@@ -148,7 +94,7 @@ export const State2 = () => {
                 />
             </>
         );
-    } else if (state2 === 0) {
+    } else if (props.state === "0") {
         return (
             <>
                 <primitive
